@@ -8,6 +8,8 @@ function CreateUser() {
   const [name, setName] = useState("");
   const [profession, setProfession] = useState("");
   const [age, setAge] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
   const [gender, setGender] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,12 +19,16 @@ function CreateUser() {
       profession,
       age: +age,
       gender,
+      address,
+      phone,
     };
     dispatch(addToUsers(newUser));
     setName("");
     setAge("");
     setGender("");
     setProfession("");
+    setAddress("");
+    setPhone("");
   };
   // const [data, setData] = useState({
   //   name: "",
@@ -60,11 +66,27 @@ function CreateUser() {
         />
         <input
           required
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          // onChange={handleChange}
+          type="text"
+          placeholder="address"
+        />
+        <input
+          required
           value={age}
           onChange={(e) => setAge(e.target.value)}
           // onChange={handleChange}
           type="number"
           placeholder="age"
+        />
+        <input
+          required
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          // onChange={handleChange}
+          type="text"
+          placeholder="phone"
         />
         <select
           required

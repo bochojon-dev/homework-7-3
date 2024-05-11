@@ -13,8 +13,16 @@ function Users({ data }) {
         <div className="users__card">
           <img src={users.gender === "male" ? male : female} alt="user" />
           <h2>{users.name}</h2>
-          <p>{users.profession}</p>
+          <p>
+            <b>{users.profession}</b>
+          </p>
+          <p>
+            <i>{users.address}</i>
+          </p>
           <p>{users.age}</p>
+          <p>
+            <u>{users.phone}</u>
+          </p>
           <button onClick={() => dispatch(removeFromUsers(users))}>
             Remove
           </button>
